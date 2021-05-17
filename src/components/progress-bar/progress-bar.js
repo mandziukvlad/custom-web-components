@@ -77,4 +77,4 @@ export default class ProgressBar extends HTMLElement {
     }
 }
 
-window.customElements.define('progress-bar', ProgressBar);
+window.customElements.define("progress-bar", ProgressBar);
