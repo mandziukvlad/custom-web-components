@@ -61,7 +61,7 @@ export default class ProgressBar extends HTMLElement {
 
         // Check if callback is function.
         if (this.progressChangeCallback
-            && {}.toString.call(this.progressChangeCallback) === '[object Function]') {
+            && {}.toString.call(this.progressChangeCallback) === "[object Function]") {
                 this.progressChangeCallback(this.progress);
         }
     }
