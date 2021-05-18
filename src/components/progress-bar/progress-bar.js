@@ -1,3 +1,5 @@
+const PROGRESS_BAR_CLASSNAME = "progress-bar";
+
 export default class ProgressBar extends HTMLElement {
     constructor(progress = 0, progressChangeCallback = null) {
         super();
@@ -6,7 +8,7 @@ export default class ProgressBar extends HTMLElement {
 
         this.progressChangeCallback = progressChangeCallback;
 
-        this._root = this.attachShadow({mode: 'closed'});
+        this._root = this.attachShadow({mode: "closed"});
 
         // this.buildRaw();
         this.buildInBetterWay();
@@ -14,10 +16,10 @@ export default class ProgressBar extends HTMLElement {
 
     buildRaw() {
         this._root.innerHTML = `
-            <div class="progress-bar"></div>
+            <div class="${PROGRESS_BAR_CLASSNAME}"></div>
 
             <style>
-                .progress-bar {
+                .${PROGRESS_BAR_CLASSNAME} {
                     background: rgb(255, 157, 0);
                     width: 0%;
                     height: 10px;
@@ -38,7 +40,7 @@ export default class ProgressBar extends HTMLElement {
 
     createProgressBar() {
         const progressBar = document.createElement("div");
-        progressBar.classList.add("progress-bar");
+        progressBar.classList.add(PROGRESS_BAR_CLASSNAME);
         progressBar.style.background = "rgb(255, 157, 0)";
         progressBar.style.width = `${this.progress}%`;
         progressBar.style.height = "10px";
@@ -55,7 +57,7 @@ export default class ProgressBar extends HTMLElement {
     setProgress(progress = this.progress) {
         this.progress = progress;
 
-        const progressBar = this._root.querySelector(".progress-bar");
+        const progressBar = this._root.querySelector("." + PROGRESS_BAR_CLASSNAME);
         
         progressBar.style.width = `${this.progress}%`;
 

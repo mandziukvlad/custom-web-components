@@ -10,7 +10,7 @@
 
         <div style="margin-bottom: 50px;">
             <div>
-                <progress-bar progress="0"></progress-bar>
+                <progress-bar progress="50"></progress-bar>
             </div>
         
             <div>
@@ -18,15 +18,33 @@
             </div>
         </div>
 
+        <div style="margin-bottom: 50px;">
+            <circular-progress-bar strokeWidth="10" progress="50"></circular-progress-bar>
 
-        <script src="./index.js"></script>
+            <div>
+                <input name="circular-progress-input" type="number" min="0" max="100" step="5">
+            </div>
+        </div>
+
 
         <script>
             const progressInput = document.querySelector("input[name='progress-input']");
             const progressBar = document.querySelector("progress-bar");
+            progressInput.value = progressBar.getAttribute("progress");
 
             progressInput.addEventListener("change", (event) => {
                 progressBar.setAttribute("progress", event.target.value);
+            });
+        </script>
+
+        <script>
+            const circularProgressInput = document.querySelector("input[name='circular-progress-input']");
+            const circularProgressBar = document.querySelector("circular-progress-bar");
+            circularProgressInput.value = circularProgressBar.getAttribute("progress");
+
+            circularProgressInput.addEventListener("change", (event) => {
+                const progress = event.target.value;
+                circularProgressBar.setAttribute("progress", progress);
             });
         </script>
         
