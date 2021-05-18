@@ -22,6 +22,7 @@ export default class ProgressBar extends HTMLElement {
                 .${PROGRESS_BAR_CLASSNAME} {
                     background: rgb(255, 157, 0);
                     width: 0%;
+                    max-width: 100%;
                     height: 10px;
                     border-radius: 4px;
                     transition: width 150ms ease-in;
@@ -43,6 +44,7 @@ export default class ProgressBar extends HTMLElement {
         progressBar.classList.add(PROGRESS_BAR_CLASSNAME);
         progressBar.style.background = "rgb(255, 157, 0)";
         progressBar.style.width = `${this.progress}%`;
+        progressBar.style.maxWidth = `100%`;
         progressBar.style.height = "10px";
         progressBar.style.borderRadius = "4px";
         progressBar.style.transition = "width 150ms ease-in";
@@ -55,7 +57,7 @@ export default class ProgressBar extends HTMLElement {
     }
 
     setProgress(progress = this.progress) {
-        this.progress = progress;
+        this.progress = progress <= 100 ? progress : 100;
 
         const progressBar = this._root.querySelector("." + PROGRESS_BAR_CLASSNAME);
         

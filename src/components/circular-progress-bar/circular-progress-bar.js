@@ -86,7 +86,7 @@ export default class CircularProgressBar extends HTMLElement {
     }
 
     setProgress(progress = this.progress) {
-        this.progress = progress;
+        this.progress = progress <= 100 ? progress : 100;
 
         const offset = this.circleLength - ((this.circleLength * this.progress) / 100);
 
