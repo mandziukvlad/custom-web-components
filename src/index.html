@@ -8,21 +8,26 @@
     </head>
     <body>
 
-        <div style="margin-bottom: 50px;">
-            <div>
-                <progress-bar progress="50"></progress-bar>
-            </div>
-        
-            <div>
-                <input name="progress-input" type="number" min="0" max="100" step="5">
-            </div>
-        </div>
+        <div id="root">
 
-        <div style="margin-bottom: 50px;">
-            <circular-progress-bar strokeWidth="10" progress="50"></circular-progress-bar>
-
-            <div>
-                <input name="circular-progress-input" type="number" min="0" max="100" step="5">
+            <div class="wrapper">
+                <div>
+                    <progress-bar progress="50"></progress-bar>
+                </div>
+            
+                <div>
+                    <input name="progress-input" type="number" min="0" max="100" step="5">
+                </div>
+            </div>
+    
+            <div class="wrapper">
+                <div>
+                    <circular-progress-bar strokeWidth="10" progress="50"></circular-progress-bar>
+                </div>
+    
+                <div>
+                    <input name="circular-progress-input" type="number" min="0" max="100" step="5">
+                </div>
             </div>
         </div>
 
